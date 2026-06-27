@@ -14,3 +14,10 @@ docker-compose.override.yml
 # OS
 .DS_Store
 Thumbs.db
+
+# .NET
+bin/
+obj/
+*.user
+*.suo
+/services/identity-service/IdentityService/obj

@@ -1,9 +1,9 @@
 
-using IdentityService.Settings;
+using IdentityAPI.Settings;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 
-namespace IdentityService
+namespace IdentityAPI
 {
     public class Program
     {

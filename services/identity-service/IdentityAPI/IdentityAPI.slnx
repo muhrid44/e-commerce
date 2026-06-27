@@ -1,3 +1,6 @@
 <Solution>
+  <Project Path="../IdentityDomain/IdentityDomain.csproj" Id="4a2b8151-27e9-4a31-98dd-db4fa4baf429" />
+  <Project Path="../IdentityRepository/IdentityRepository.csproj" Id="967fb465-f98d-44aa-8b06-ce72b6aa76d0" />
+  <Project Path="../IdentityService/IdentityService.csproj" Id="b147bdd8-0075-43ef-9570-502fc3e41fbd" />
   <Project Path="IdentityAPI.csproj" />
 </Solution>

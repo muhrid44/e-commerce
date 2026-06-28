@@ -1,6 +1,9 @@
 
+using Identity.Domain.Model;
+using Identity.Repository;
 using IdentityAPI.Settings;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
 namespace IdentityAPI
@@ -33,6 +36,17 @@ namespace IdentityAPI
                     IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(jwtSetting.Secret))
                 };
             });
+
+            builder.Services.AddDbContext<AppIdentityDbContext>(opt =>
+            {
+                opt.UseNpgsql(builder.Configuration.GetConnectionString("IdentityDatabase"));
+            });
+
+            builder.Services.AddIdentityCore<UserModel>(options =>
+            {
+                options.Password.RequiredLength = 8;
+                options.User.RequireUniqueEmail = true;
+            }).AddEntityFrameworkStores<AppIdentityDbContext>();
 
             // Add services to the container.
 
